@@ -7,9 +7,10 @@ public class Hero {
 	private String name;
 	//コンストラクタ
 	public Hero(int hp, int mp,String name) {
-		
 		if (hp < 0) {
-			this.hp = 0;
+			System.out.println("ifの中の" + hp);
+			//this.setHp(hp);はできない？？
+			hp = 0;
 		}
 		this.setHp(hp);
 		if (mp < 0) {

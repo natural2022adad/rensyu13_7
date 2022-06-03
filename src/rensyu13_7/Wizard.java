@@ -11,7 +11,7 @@ public class Wizard  {
 	private Wand wand;
 	//コンストラクタ
 	public Wizard(int hp, int mp,String name) {
-		if (hp < 0) this.hp = 0;
+		if (hp < 0) hp = 0;
 		this.setHp(hp);
 		
 		if (mp < 0) throw new IllegalArgumentException("mpがいじょうです");	
