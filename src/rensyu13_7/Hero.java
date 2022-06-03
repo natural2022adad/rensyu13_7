@@ -8,9 +8,13 @@ public class Hero {
 	//コンストラクタ
 	public Hero(int hp, int mp,String name) {
 		if (hp < 0) {
+			
 			System.out.println("ifの中の" + hp);
 			//this.setHp(hp);はできない？？
+			this.hp = hp;
 			hp = 0;
+			System.out.println("ifの中の" + hp);
+			
 		}
 		this.setHp(hp);
 		if (mp < 0) {
@@ -21,7 +25,7 @@ public class Hero {
 			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
 		}
 		this.setName(name);
-		
+		System.out.println("の" + this.hp);
 	}
 	
 	//メソッド
