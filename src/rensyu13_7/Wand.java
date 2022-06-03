@@ -11,12 +11,14 @@ public class Wand {
     private int rand = ran.nextInt(max_val) + min_val;
 
     private double power =  rand/10; //杖の魔力
+
     //コンストラクタ
     public Wand(String name) {
     	if (name == null ||name.length() <= 3) {
 			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
 		}
-    	
+    	this.setName(name);
+    	this.setPower(power);
     }
     
 
@@ -29,7 +31,7 @@ public class Wand {
 		if (name == null || name.length() < 3) {
 			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
 		}
-		
+		this.name = name;
 	}
 
 	public double getPower() {
@@ -42,6 +44,8 @@ public class Wand {
 		}
 		this.power = power;
 	}
-
+	public String toString() {
+		return "Name:" + this.name + "Power:" +this.power;
+	}
 
 }
