@@ -3,13 +3,22 @@ package rensyu13_7;
 import java.util.Random;
 
 public class Wand {
-	private String name = "魔法の杖"; //杖の名前 
+	//フィールド
+	private String name; //杖の名前 
 	private int min_val = 5;
 	private int max_val = 1000;
     Random ran = new Random();
     private int rand = ran.nextInt(max_val) + min_val;
 
     private double power =  rand/10; //杖の魔力
+    //コンストラクタ
+    public Wand(String name) {
+    	if (name == null ||name.length() <= 3) {
+			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
+		}
+    	
+    }
+    
 
 	public String getName() {
 		
@@ -20,7 +29,7 @@ public class Wand {
 		if (name == null || name.length() < 3) {
 			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
 		}
-		this.name = name;
+		
 	}
 
 	public double getPower() {

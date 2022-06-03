@@ -4,10 +4,25 @@ import java.util.Scanner;
 
 public class Wizard  {
 	Display d = new Display();
-	private int hp = 888;
-	private int mp = 888;
-	private String name = "魔法少女";
+	//フィールド
+	private int hp;
+	private int mp;
+	private String name;
 	private Wand wand;
+	//コンストラクタ
+	public Wizard(int hp, int mp,String name) {
+		if (name == null ||name.length() < 3) {
+			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
+		}
+		
+		if (mp < 0) {
+			throw new IllegalArgumentException("mpがいじょうです");	
+		}
+		if (hp < 0) {
+			this.hp = 0;
+		} 
+	}
+	//メソッド
 	public void heal (Hero h) {
 		int basePoint = 10;
 		int recovPoint = (int)(basePoint * this.wand.getPower());
@@ -15,6 +30,9 @@ public class Wizard  {
 		System.out.println("勇者の名前を変えてみませんか？");
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
+        if (str == null || str.length() < 3) {
+			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
+		}
 		h.setName(str);
 		System.out.println("勇者" + h.getName() + "に生まれ変われました");
 		d.display("勇者" + h.getName() + "のHpを" + recovPoint + "回復した！");
@@ -24,11 +42,7 @@ public class Wizard  {
 		return hp;
 	}
 	public void setHp(int hp) {
-		if (hp < 0) {
-			this.hp = 0;
-		} else {
-		this.hp = hp;
-		}
+		
 	}
 	public int getMp() {
 		return mp;

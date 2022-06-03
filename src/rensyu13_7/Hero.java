@@ -1,10 +1,29 @@
 package rensyu13_7;
 
 public class Hero {
-	private int hp = 100;
-	private int mp = 30;
-	private String name = "プログラマーアダチ";
+	//フィールド
+	private int hp;
+	private int mp;
+	private String name;
+	//コンストラクタ
+	public Hero(int hp, int mp,String name) {
+		/*if (name == null ||name.length() < 3) {
+			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
+		}
+		
+		if (mp < 0) {
+			throw new IllegalArgumentException("mpがいじょうです");	
+		}
+		if (hp < 0) {
+			System.out.println(this.hp);
+			this.hp = 0;
+		}*/
+		System.out.println(this.hp);
+		System.out.println(this.mp);
+		System.out.println(this.name);
+	}
 	
+	//メソッド
 	public int getHp() {
 		return hp;
 	}
@@ -18,9 +37,6 @@ public class Hero {
 		this.mp = mp;
 	}
 	public String getName() {
-		if (name.length() <= 3) {
-			throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");
-		}
 		return name;
 	}
 	public void setName(String name) {
