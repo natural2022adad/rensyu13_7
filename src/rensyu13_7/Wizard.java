@@ -1,5 +1,7 @@
 package rensyu13_7;
 
+import static java.lang.System.*;
+
 import java.util.Scanner;
 
 public class Wizard  {
@@ -25,7 +27,7 @@ public class Wizard  {
 		int basePoint = 10;
 		int recovPoint = (int)(basePoint * this.wand.getPower());
 		h.setHp(h.getHp() + recovPoint);
-		System.out.println("勇者の名前を変えてみませんか？");
+		out.println("勇者の名前を変えてみませんか？");
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
         if (str == null || str.length() < 3)throw new IllegalArgumentException("名前が短すぎる。3文字いじょうで");

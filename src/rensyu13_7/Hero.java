@@ -1,5 +1,7 @@
 package rensyu13_7;
 
+
+
 public class Hero {
 	//フィールド
 	private int hp;

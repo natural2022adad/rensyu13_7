@@ -1,7 +1,7 @@
 package rensyu13_7;
 
 public class Display {
-	public void display(String str) {
+	public static void d(String str) {
 	    char[] charArray = str.toCharArray();
 	    try {
 		    for (char ch: charArray) {
